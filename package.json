@@ -1,0 +1,10 @@
+{
+  "name": "sakila-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
