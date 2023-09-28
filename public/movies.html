@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sakila Frontend</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="movies_script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <button id="homeBtn" onclick="window.location.href='index.html'">Home</button>
+        <button id="moviesBtn" onclick="window.location.href='movies.html'">Movies</button>
+        <button id="customersBtn" onclick="window.location.href='customers.html'">Customers</button>
+        <button id="reportsBtn">Reports</button>
+    </nav>
+
+    <input type="text" id="movieSearch" placeholder="Search for movies..." oninput="searchMovies()">
+    
+    <div id="moviePageContent">
+        <div id="movieListContainer">
+            <h2>All Movies</h2>
+            <ul id="movieList">
+            </ul>
+            <div class="pagination">
+                <button id="prevPageBtn" onclick="prevPage()">Previous</button>
+                <button id="nextPageBtn" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+
+        <div id="movieDetailsContainer">
+            <div id="movieDetails">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
