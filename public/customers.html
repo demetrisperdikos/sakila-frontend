@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Customers</title>
-    <script defer src="customers_script.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="customers_script.js"></script>
 </head>
 <body>
 
@@ -14,23 +14,28 @@
         <button id="customersBtn" onclick="window.location.href='customers.html'">Customers</button>
         <button id="reportsBtn">Reports</button>
     </nav>
-    
-    <h1>Customers</h1>
 
-    
-    <div class="search-bar">
-        <input type="text" id="customerSearch" placeholder="Search by ID, first name or last name...">
+    <!-- Full-width search bar on top -->
+    <div class="search-bar-full-width">
+        <input type="text" id="customerSearch" placeholder="Search for customers..." oninput="searchCustomers()">
     </div>
 
-    <ul id="customerList">
-    </ul>
-
-    <div class="pagination">
-        <button id="prevPageBtn">Previous</button>
-        <button id="nextPageBtn">Next</button>
-    </div>
-
-    <div id="customerDetails">
+    <!-- Main content area -->
+    <div class="main-container">
+        <div class="half-width" id="customerListContainer">
+            <ul id="customerList">
+                <!-- Customer list goes here -->
+            </ul>
+            <div class="pagination">
+                <button id="prevPageBtn" onclick="prevPage()">Previous</button>
+                <button id="nextPageBtn" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+        <div class="half-width" id="customerDetailsContainer">
+            <div id="customerDetails">
+                <!-- Customer details go here -->
+            </div>
+        </div>
     </div>
 
 </body>

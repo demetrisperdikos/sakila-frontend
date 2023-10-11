@@ -157,3 +157,79 @@ ul li {
     color: white;
     cursor: pointer;
 }
+
+#searchBarContainer {
+    width: 100%;
+}
+
+
+
+#searchBarContainer {
+    width: 100%;
+}
+
+
+
+
+
+/* Make the search bar taller and take up the full width of the screen */
+.search-bar-full-width {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 50px;  /* Set the height */
+}
+
+.search-bar-full-width input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;  /* Take up the full height of its parent container */
+}
+
+
+/* Define the layout for the main container */
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Each half should take up 50% of the main container's width */
+.half-width {
+    flex: 1;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+/* Add a border to separate the two halves */
+#customerDetailsContainer {
+    border-left: 1px solid #ccc;
+}
+
+/* Make the customer list full width */
+#customerList {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Make each customer list item full width */
+#customerList li {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.rented-movies-list ul li {
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+    list-style-type: none;  /* Removes the bullet points */
+    border: none;           /* Removes border */
+    background-color: transparent;  /* Makes background transparent */
+    box-shadow: none;       /* Removes box shadow */
+  }
+  
+  

@@ -34,17 +34,25 @@ function getCustomerDetails(customer_id) {
     .then(response => response.json())
     .then(customer => {
         const customerDetails = document.getElementById('customerDetails');
+        
+        // Prepare a string containing all rented movie names, separated by commas
+        const rentedMovies = customer.rentedMovies.map(movie => movie.title).join(', ');
+
         customerDetails.innerHTML = `
             <h3>${customer.first_name} ${customer.last_name}</h3>
+            <p>Customer ID: ${customer.customer_id}</p>
             <p>Email: ${customer.email}</p>
-            <p>Address: ${customer.address}</p>
-            <!-- Add more details as needed -->
+            <p><strong>Movies rented:</strong> ${rentedMovies || 'None'}</p>
         `;
     })
     .catch(error => {
         console.error('Error fetching customer details:', error);
     });
 }
+
+
+
+
 
 function searchCustomers() {
     const searchTerm = document.getElementById('customerSearch').value;
