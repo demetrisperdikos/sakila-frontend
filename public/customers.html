@@ -7,24 +7,21 @@
     <script defer src="customers_script.js"></script>
 </head>
 <body>
-
     <nav class="navbar">
         <button id="homeBtn" onclick="window.location.href='index.html'">Home</button>
         <button id="moviesBtn" onclick="window.location.href='movies.html'">Movies</button>
         <button id="customersBtn" onclick="window.location.href='customers.html'">Customers</button>
-        <button id="reportsBtn">Reports</button>
+        <button id="reportsBtn"onclick="window.location.href='report.html'">Reports</button>
     </nav>
 
-    <!-- Full-width search bar on top -->
     <div class="search-bar-full-width">
         <input type="text" id="customerSearch" placeholder="Search for customers..." oninput="searchCustomers()">
+        <button id="addCustomerBtn" onclick="addCustomer()">Add Customer</button>
     </div>
 
-    <!-- Main content area -->
     <div class="main-container">
         <div class="half-width" id="customerListContainer">
             <ul id="customerList">
-                <!-- Customer list goes here -->
             </ul>
             <div class="pagination">
                 <button id="prevPageBtn" onclick="prevPage()">Previous</button>
@@ -32,9 +29,24 @@
             </div>
         </div>
         <div class="half-width" id="customerDetailsContainer">
-            <div id="customerDetails">
-                <!-- Customer details go here -->
-            </div>
+            <div id="customerDetails"></div>
+       <!-- Edit Customer Form -->
+       <div id="editCustomerForm" style="display:none;">
+           <h3>Edit Customer</h3>
+           <form id="customerEditForm">
+               <label for="editFirstName">First Name:</label>
+               <button onclick="updateFirstName(customerId)">Edit First Name</button>
+
+               <input type="text" id="editFirstName" name="firstName"><br><br>
+               <label for="editLastName">Last Name:</label>
+               <input type="text" id="editLastName" name="lastName"><br><br>
+               <button type="submit">Update</button>
+               <button type="button" onclick="hideEditForm()">Cancel</button>
+           </form>
+       </div>
+  
+    
+   
         </div>
     </div>
 

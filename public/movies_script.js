@@ -58,26 +58,60 @@ function getMovieDetails(film_id) {
             console.error('Error fetching movie details:', error);
         });
 }
-
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('rent-movie-btn')) {
+        const movie_id = event.target.getAttribute('data-movie-id');
+        const customer_id = prompt("Enter the Customer ID to rent this movie:");
+        if (customer_id) {
+            fetch(`http://localhost:3000/rent-movie`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ movie_id, customer_id }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Movie rented successfully!");
+                } else {
+                    alert("Failed to rent movie.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    }
+});
 
 function rentMovie(film_id) {
-    const customer_id = 1;
-    fetch('http://localhost:3000/rent-movie', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ film_id, customer_id })
+    const customer_id = prompt("Enter your customer ID:");
+    if (customer_id === null) {
+      alert("Operation canceled by the user.");
+      return;
+    }
+  
+    fetch(`http://localhost:3000/rent-movie`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ customer_id, film_id }),
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.success);
+      if (data.success) {
+        alert("Movie rented successfully!");
+      } else {
+        alert("An error occurred while renting the movie.");
+      }
     })
     .catch((error) => {
-        console.error('Error:', error);
+      console.error('Error:', error);
     });
-}
-
+  }
+  
 function searchMovies() {
     const searchTerm = document.getElementById('movieSearch').value;
     currentSearchTerm = searchTerm;

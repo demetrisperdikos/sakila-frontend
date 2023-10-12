@@ -171,42 +171,36 @@ ul li {
 
 
 
-
-/* Make the search bar taller and take up the full width of the screen */
 .search-bar-full-width {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 50px;  /* Set the height */
+    height: 50px; 
 }
 
 .search-bar-full-width input {
     width: 100%;
     box-sizing: border-box;
-    height: 100%;  /* Take up the full height of its parent container */
+    height: 100%; 
 }
 
 
-/* Define the layout for the main container */
 .main-container {
     display: flex;
     flex-direction: row;
 }
 
-/* Each half should take up 50% of the main container's width */
 .half-width {
     flex: 1;
     box-sizing: border-box;
     width: 50%;
 }
 
-/* Add a border to separate the two halves */
 #customerDetailsContainer {
     border-left: 1px solid #ccc;
 }
 
-/* Make the customer list full width */
 #customerList {
     width: 100%;
     margin: 0;
@@ -214,7 +208,6 @@ ul li {
     list-style-type: none;
 }
 
-/* Make each customer list item full width */
 #customerList li {
     width: 100%;
     padding: 10px;
@@ -226,10 +219,18 @@ ul li {
     font-size: 14px;
     font-weight: normal;
     color: black;
-    list-style-type: none;  /* Removes the bullet points */
-    border: none;           /* Removes border */
-    background-color: transparent;  /* Makes background transparent */
-    box-shadow: none;       /* Removes box shadow */
+    list-style-type: none;  
+    border: none;          
+    background-color: transparent; 
+    box-shadow: none;      
   }
   
-  
+  #addCustomerBtn {
+    z-index: 1; 
+  }
+  .search-bar-full-width {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+    
