@@ -5,6 +5,8 @@
     "dev": "lite-server"
   },
   "dependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^22.1.0",
     "lite-server": "^2.6.1"
   }
 }
